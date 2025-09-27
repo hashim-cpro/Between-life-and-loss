@@ -4,7 +4,7 @@ var mushroom_count = 5
 var salt_leaf_count = 2  # rare
 var clay_count = 3
 
-var fast_cure_count = 0
+var fast_cure_count = 0 
 var slow_cure_count = 0
 
 
@@ -28,8 +28,10 @@ var pot_salt_leaves = 0
 var pot_clay = 0
 var pot_history: Array[String] = []
 
+const HOSPITAL_SCENE_PATH := "res://scenes/hospital.tscn"
+
 @onready var cook_button = $"crafting pot/Button"
-@onready var ingredients_container = $"HBoxContainer/Left Panel/Ingredient Grid"
+@onready var ingredients_container = $"Left Panel/Ingredient Grid"
 @onready var result_container = $"HBoxContainer/Right Panel/Medicine Grid"
 
 func _ready():
@@ -54,9 +56,7 @@ func setup_ui():
 	create_result_ui()
 
 func create_ingredient_ui():
-	var title = Label.new()
-	title.text = "Available Ingredients:"
-	ingredients_container.add_child(title)
+
 	
 	var mushroom_btn = Button.new()
 	mushroom_btn.text = "Add Mushroom (" + str(mushroom_count) + ")"
@@ -93,6 +93,12 @@ func create_result_ui():
 	var title = Label.new()
 	title.text = "Medicine Inventory:"
 	result_container.add_child(title)
+
+	var go_btn = Button.new()
+	go_btn.name = "HospitalNavButton"
+	go_btn.text = "Go To Medic Center"
+	go_btn.pressed.connect(_on_go_hospital_pressed)
+	result_container.add_child(go_btn)
 
 	var recipes_title = Label.new()
 	recipes_title.text = "\nRecipes:" 
@@ -190,9 +196,17 @@ func _on_cook_button_pressed():
 	match chosen_recipe.id:
 		"fast_cure":
 			fast_cure_count += 1
+			if Engine.has_singleton("GMS") == false and Engine.has_singleton("gms") == false:
+				# attempt via autoload variable (standard pattern) – safe assignment if exists
+				if typeof(get_node_or_null("/root/GMS")) != TYPE_NIL:
+					get_node("/root/GMS").add_fast_cure(1)
+			else:
+				GMS.add_fast_cure(1)
 			print("Cooked: %s" % chosen_recipe.display_name)
 		"slow_cure":
 			slow_cure_count += 1
+			if typeof(get_node_or_null("/root/GMS")) != TYPE_NIL:
+				GMS.add_slow_cure(1)
 			print("Cooked: %s" % chosen_recipe.display_name)
 		_:
 			print("Cooked unknown recipe id: ", chosen_recipe.id)
@@ -276,3 +290,23 @@ func can_add_ingredient(ing: String) -> bool:
 		if m <= req.get("mushroom",0) and s <= req.get("salt_leaf",0) and c <= req.get("clay",0):
 			return true
 	return false
+
+func _on_go_hospital_pressed():
+	var scene_res = load(HOSPITAL_SCENE_PATH)
+	if scene_res == null:
+		push_error("Hospital scene missing: " + HOSPITAL_SCENE_PATH)
+		return
+	var hospital = scene_res.instantiate()
+	if hospital == null:
+		push_error("Failed to instantiate hospital scene")
+		return
+	if hospital.has_method("set_cure_counts"):
+		hospital.set_cure_counts(fast_cure_count, slow_cure_count)
+	else:
+		push_warning("Hospital scene lacks set_cure_counts; counts not transferred")
+	var tree = get_tree()
+	var current = tree.current_scene
+	tree.root.add_child(hospital)
+	tree.current_scene = hospital
+	if current:
+		current.queue_free()

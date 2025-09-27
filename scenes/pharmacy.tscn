@@ -18,46 +18,53 @@ offset_top = 21.0
 offset_right = 1162.0
 offset_bottom = 668.0
 
+[node name="Left Panel" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 28.0
+offset_top = 91.0
+offset_right = 390.0
+offset_bottom = 519.0
+
+[node name="Label" type="Label" parent="Left Panel"]
+layout_mode = 2
+text = "Available Ingredients"
+
+[node name="Ingredient Grid" type="VBoxContainer" parent="Left Panel"]
+layout_mode = 2
+
+[node name="Mushroom Slot" type="HBoxContainer" parent="Left Panel/Ingredient Grid"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Left Panel/Ingredient Grid/Mushroom Slot"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Left Panel/Ingredient Grid/Mushroom Slot"]
+layout_mode = 2
+
+[node name="Salt Leaf Slot" type="HBoxContainer" parent="Left Panel/Ingredient Grid"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Left Panel/Ingredient Grid/Salt Leaf Slot"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Left Panel/Ingredient Grid/Salt Leaf Slot"]
+layout_mode = 2
+
+[node name="Clay Slot" type="HBoxContainer" parent="Left Panel/Ingredient Grid"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Left Panel/Ingredient Grid/Clay Slot"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Left Panel/Ingredient Grid/Clay Slot"]
+layout_mode = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Left Panel" type="VBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/Left Panel"]
-layout_mode = 2
-
-[node name="Ingredient Grid" type="VBoxContainer" parent="HBoxContainer/Left Panel"]
-layout_mode = 2
-
-[node name="Mushroom Slot" type="HBoxContainer" parent="HBoxContainer/Left Panel/Ingredient Grid"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="HBoxContainer/Left Panel/Ingredient Grid/Mushroom Slot"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/Left Panel/Ingredient Grid/Mushroom Slot"]
-layout_mode = 2
-
-[node name="Salt Leaf Slot" type="HBoxContainer" parent="HBoxContainer/Left Panel/Ingredient Grid"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="HBoxContainer/Left Panel/Ingredient Grid/Salt Leaf Slot"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/Left Panel/Ingredient Grid/Salt Leaf Slot"]
-layout_mode = 2
-
-[node name="Clay Slot" type="HBoxContainer" parent="HBoxContainer/Left Panel/Ingredient Grid"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="HBoxContainer/Left Panel/Ingredient Grid/Clay Slot"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/Left Panel/Ingredient Grid/Clay Slot"]
-layout_mode = 2
+offset_left = 741.0
+offset_top = 86.0
+offset_right = 1152.0
+offset_bottom = 538.0
 
 [node name="Right Panel" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
