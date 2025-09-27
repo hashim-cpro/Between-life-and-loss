@@ -57,18 +57,20 @@ func setup_ui():
 
 func create_ingredient_ui():
 
-	
 	var mushroom_btn = Button.new()
+	mushroom_btn.name = "MushroomButton"
 	mushroom_btn.text = "Add Mushroom (" + str(mushroom_count) + ")"
 	mushroom_btn.pressed.connect(_on_mushroom_button_pressed)
 	ingredients_container.add_child(mushroom_btn)
-	
+
 	var salt_btn = Button.new()
+	salt_btn.name = "SaltLeafButton"
 	salt_btn.text = "Add Salt Leaf (" + str(salt_leaf_count) + ") - RARE"
 	salt_btn.pressed.connect(_on_salt_leaf_button_pressed)
 	ingredients_container.add_child(salt_btn)
-	
+
 	var clay_btn = Button.new()
+	clay_btn.name = "ClayButton"
 	clay_btn.text = "Add Clay (" + str(clay_count) + ")"
 	clay_btn.pressed.connect(_on_clay_button_pressed)
 	ingredients_container.add_child(clay_btn)
@@ -134,22 +136,22 @@ func update_pot_display():
 	if pot_contents:
 		pot_contents.text = "Mushrooms: " + str(pot_mushrooms) + "\nSalt Leaves: " + str(pot_salt_leaves) + "\nClay: " + str(pot_clay)
 
-	if ingredients_container.get_child_count() >= 7:
-		var mushroom_btn = ingredients_container.get_child(1)
-		if mushroom_btn is Button:
-			mushroom_btn.text = "Add Mushroom (" + str(mushroom_count) + ")"
-			mushroom_btn.disabled = (mushroom_count <= 0) or pot_exact_matches_any_recipe()
-		var salt_btn = ingredients_container.get_child(2)
-		if salt_btn is Button:
-			salt_btn.text = "Add Salt Leaf (" + str(salt_leaf_count) + ") - RARE"
-			salt_btn.disabled = (salt_leaf_count <= 0) or pot_exact_matches_any_recipe()
-		var clay_btn = ingredients_container.get_child(3)
-		if clay_btn is Button:
-			clay_btn.text = "Add Clay (" + str(clay_count) + ")"
-			clay_btn.disabled = (clay_count <= 0) or pot_exact_matches_any_recipe()
-		var undo_btn = ingredients_container.get_child(6)
-		if undo_btn is Button:
-			undo_btn.disabled = pot_history.is_empty()
+	# Update buttons by name (safer than relying on child indices which changed earlier)
+	var mushroom_btn = ingredients_container.get_node_or_null("MushroomButton")
+	if mushroom_btn is Button:
+		mushroom_btn.text = "Add Mushroom (" + str(mushroom_count) + ")"
+		mushroom_btn.disabled = (mushroom_count <= 0) or pot_exact_matches_any_recipe()
+	var salt_btn = ingredients_container.get_node_or_null("SaltLeafButton")
+	if salt_btn is Button:
+		salt_btn.text = "Add Salt Leaf (" + str(salt_leaf_count) + ") - RARE"
+		salt_btn.disabled = (salt_leaf_count <= 0) or pot_exact_matches_any_recipe()
+	var clay_btn = ingredients_container.get_node_or_null("ClayButton")
+	if clay_btn is Button:
+		clay_btn.text = "Add Clay (" + str(clay_count) + ")"
+		clay_btn.disabled = (clay_count <= 0) or pot_exact_matches_any_recipe()
+	var undo_btn = ingredients_container.get_node_or_null("UndoButton")
+	if undo_btn is Button:
+		undo_btn.disabled = pot_history.is_empty()
 
 	if cook_button:
 		cook_button.disabled = not pot_exact_matches_any_recipe()
