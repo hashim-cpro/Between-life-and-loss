@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvxm7y81ak4l"]
+
+[ext_resource type="Script" path="res://scripts/hospital.gd" id="1_hospital"]
+
+[node name="Hospital" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_hospital")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.8, 0.9, 0.8, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 50.0
+offset_right = 700.0
+offset_bottom = 100.0
+text = "Island Hospital - Cure Patients"
+horizontal_alignment = 1
+
+[node name="MedicineInventory" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 300.0
+offset_bottom = 500.0
+
+[node name="MedicineTitle" type="Label" parent="MedicineInventory"]
+layout_mode = 2
+text = "Available Medicines:"
+
+[node name="PatientArea" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 150.0
+offset_right = 800.0
+offset_bottom = 500.0
+
+[node name="PatientTitle" type="Label" parent="PatientArea"]
+layout_mode = 2
+text = "Patients Waiting for Treatment:"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 550.0
+offset_right = 200.0
+offset_bottom = 590.0
+text = "Back to Pharmacy"
+
+[node name="Stats" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 150.0
+offset_right = 1100.0
+offset_bottom = 400.0
+
+[node name="StatsTitle" type="Label" parent="Stats"]
+layout_mode = 2
+text = "Statistics:"

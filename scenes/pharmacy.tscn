@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://q1c2ob8we15m"]
+
+[ext_resource type="Script" uid="uid://c6xnstyniv5sx" path="res://scripts/pharmacy.gd" id="1_eick7"]
+[ext_resource type="Texture2D" uid="uid://dpe4a5idxl8m3" path="res://images/pot.png" id="2_pqhlw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_25t4v"]
+radius = 154.081
+
+[node name="pharmacy" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_eick7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 21.0
+offset_right = 1162.0
+offset_bottom = 668.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left Panel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Left Panel"]
+layout_mode = 2
+
+[node name="Ingredient Grid" type="VBoxContainer" parent="HBoxContainer/Left Panel"]
+layout_mode = 2
+
+[node name="Mushroom Slot" type="HBoxContainer" parent="HBoxContainer/Left Panel/Ingredient Grid"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/Left Panel/Ingredient Grid/Mushroom Slot"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Left Panel/Ingredient Grid/Mushroom Slot"]
+layout_mode = 2
+
+[node name="Salt Leaf Slot" type="HBoxContainer" parent="HBoxContainer/Left Panel/Ingredient Grid"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/Left Panel/Ingredient Grid/Salt Leaf Slot"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Left Panel/Ingredient Grid/Salt Leaf Slot"]
+layout_mode = 2
+
+[node name="Clay Slot" type="HBoxContainer" parent="HBoxContainer/Left Panel/Ingredient Grid"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/Left Panel/Ingredient Grid/Clay Slot"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Left Panel/Ingredient Grid/Clay Slot"]
+layout_mode = 2
+
+[node name="Right Panel" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Right Panel"]
+layout_mode = 2
+
+[node name="Medicine Grid" type="VBoxContainer" parent="HBoxContainer/Right Panel"]
+layout_mode = 2
+
+[node name="Fast Cure" type="HBoxContainer" parent="HBoxContainer/Right Panel/Medicine Grid"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Right Panel/Medicine Grid/Fast Cure"]
+layout_mode = 2
+
+[node name="Slow Cure" type="HBoxContainer" parent="HBoxContainer/Right Panel/Medicine Grid"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/Right Panel/Medicine Grid/Slow Cure"]
+layout_mode = 2
+
+[node name="crafting pot" type="Area2D" parent="."]
+position = Vector2(34, -23)
+
+[node name="Sprite2D" type="Sprite2D" parent="crafting pot"]
+position = Vector2(541, 454)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_pqhlw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="crafting pot"]
+position = Vector2(535, 461)
+shape = SubResource("CircleShape2D_25t4v")
+debug_color = Color(0.44148, 0.536171, 0.718836, 0.42)
+
+[node name="Button" type="Button" parent="crafting pot"]
+offset_left = 479.0
+offset_top = 294.0
+offset_right = 600.0
+offset_bottom = 325.0
+text = "Cook"

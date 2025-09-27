@@ -46,7 +46,8 @@ func show_next_slide():
 	else:
 		print("End of slides reached - starting game")
 		narrative_overlay.visible = false
-		get_tree().paused = false
+		get_tree().change_scene_to_file("res://scenes/pharmacy.tscn")
+		
 		
 
 

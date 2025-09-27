@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgfpwynyi0pbb"]
+[gd_scene load_steps=4 format=3 uid="uid://cgfpwynyi0pbb"]
 
 [ext_resource type="Script" uid="uid://bjh8glxtgr2em" path="res://scripts/main.gd" id="1_o5qli"]
+
+[sub_resource type="Theme" id="Theme_o5qli"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5qli"]
 
@@ -18,7 +20,8 @@ offset_left = -284.0
 offset_top = -133.0
 offset_right = 1519.0
 offset_bottom = 842.0
-color = Color(0, 0, 0, 1)
+theme = SubResource("Theme_o5qli")
+color = Color(0.404511, 0.404511, 0.404511, 1)
 
 [node name="Panel" type="Panel" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
@@ -29,11 +32,16 @@ offset_bottom = 622.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o5qli")
 
 [node name="Main text" type="Label" parent="CanvasLayer/ColorRect/Panel"]
-layout_mode = 0
-offset_left = 404.0
-offset_top = 141.0
-offset_right = 444.0
-offset_bottom = 164.0
+modulate = Color(0.960784, 0.960784, 0.862745, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Controls Guide" type="Label" parent="CanvasLayer/ColorRect"]
 layout_mode = 0

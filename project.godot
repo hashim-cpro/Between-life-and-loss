@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="daydream game"
-run/main_scene="uid://cgfpwynyi0pbb"
+run/main_scene="uid://q1c2ob8we15m"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://images/icon.svg"
 
 [autoload]
 
 GMS="*res://scripts/GameManager.gd"
+GameData="*res://scripts/game_data.gd"
 
 [input]
 
