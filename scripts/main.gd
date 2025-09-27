@@ -17,7 +17,7 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
 func _process(delta):
-	if Input.is_action_just_pressed("space bar"):
+	if Input.is_action_just_pressed("move to next slide"):
 		show_next_slide()
 			
 		
