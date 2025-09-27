@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgfpwynyi0pbb"]
+
+[ext_resource type="Script" uid="uid://bjh8glxtgr2em" path="res://scripts/main.gd" id="1_o5qli"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_o5qli")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Button" type="Button" parent="CanvasLayer/ColorRect/Panel/Label"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
