@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgfpwynyi0pbb"]
+[gd_scene load_steps=5 format=3 uid="uid://cgfpwynyi0pbb"]
 
 [ext_resource type="Script" uid="uid://bjh8glxtgr2em" path="res://scripts/main.gd" id="1_o5qli"]
+[ext_resource type="AudioStream" uid="uid://dps0canvfse7p" path="res://images/sad-cinematic-despair-mourning-tragic-music-340712-[AudioTrimmer.com](1).mp3" id="2_0wfyh"]
 
 [sub_resource type="Theme" id="Theme_o5qli"]
 
@@ -49,3 +50,7 @@ offset_left = 661.0
 offset_top = 697.0
 offset_right = 1017.0
 offset_bottom = 751.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0wfyh")
+autoplay = true

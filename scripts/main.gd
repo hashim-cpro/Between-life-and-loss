@@ -3,17 +3,17 @@ extends Control
 # Text to display goes here:
 @export var narrative_slides : Array[String] = [
 	"You are the only medic… on a distant, forgotten island.",
-	"One day, strangers arrive — pale men in red coats.",
-	"They take your people… your family… across the sea.",
-
-	"A few days later, they return some boys… but within a week, they are dead.",
-	"Soon after, a deadly virus started to spread across the island.",
-	"The shadow of death looms over your island.",
-
-	"Now, hope rests on you… and the little you have.",
-	"Can you save them?",
-	
-	"Press Continue to begin."
+	"A virus spreads, You are the only Hope!",
+	"You got limited resouces, and tough choices!",
+	"Good Luck!",
+	"One last thing: this was a rush job made in less then 8 hours 😭
+	so alot of stuff is missing
+	here is what ya need to know: 
+	fast cure costs rare items
+	slow cure costs normal
+	you gotta decide between preventing the virus spread,
+	healing family members or normal villagers, you can't save all of them!
+	again sorry this is a rushed project 🙏"
 ]
 
 var current_slide_index = 0

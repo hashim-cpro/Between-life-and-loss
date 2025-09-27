@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://q1c2ob8we15m"]
+[gd_scene load_steps=6 format=3 uid="uid://q1c2ob8we15m"]
 
 [ext_resource type="Script" uid="uid://c6xnstyniv5sx" path="res://scripts/pharmacy.gd" id="1_eick7"]
 [ext_resource type="Texture2D" uid="uid://dpe4a5idxl8m3" path="res://images/pot.png" id="2_pqhlw"]
 [ext_resource type="Texture2D" uid="uid://kh5l3tsj2d50" path="res://images/image.png" id="3_pqhlw"]
+[ext_resource type="AudioStream" uid="uid://cdxrdbq0vdsu4" path="res://images/part 2.mp3" id="4_25t4v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_25t4v"]
 radius = 154.081
@@ -111,3 +112,7 @@ offset_top = 294.0
 offset_right = 600.0
 offset_bottom = 325.0
 text = "Cook"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_25t4v")
+autoplay = true

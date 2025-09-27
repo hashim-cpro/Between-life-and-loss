@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5yeadt4k611w"]
+[gd_scene load_steps=4 format=3 uid="uid://c5yeadt4k611w"]
 
 [ext_resource type="Script" uid="uid://ctryw57vilr3h" path="res://scripts/hospital.gd" id="1_la7h8"]
 [ext_resource type="Texture2D" uid="uid://bufc7njeavk4m" path="res://images/image copy.png" id="2_ysjay"]
+[ext_resource type="AudioStream" uid="uid://cdxrdbq0vdsu4" path="res://images/part 2.mp3" id="3_cxbdb"]
 
 [node name="Hospital" type="Control"]
 layout_mode = 3
@@ -13,7 +14,7 @@ script = ExtResource("1_la7h8")
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -10
 layout_mode = 0
-offset_left = -74.0
+offset_left = -107.0
 offset_top = -207.0
 offset_right = 1282.0
 offset_bottom = 809.0
@@ -63,3 +64,7 @@ offset_bottom = 394.0
 
 [node name="Stats Title" type="Label" parent="Stats"]
 layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cxbdb")
+autoplay = true

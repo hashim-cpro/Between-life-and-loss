@@ -19,6 +19,7 @@ config/icon="res://images/icon.svg"
 
 GMS="*res://scripts/GameManager.gd"
 GameData="*res://scripts/game_data.gd"
+MusicManager="*res://scripts/MusicManager.gd"
 
 [input]
 
