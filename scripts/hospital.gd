@@ -7,6 +7,7 @@ extends Control
 	get_node_or_null("BackButton") if get_node_or_null("BackButton") != null else get_node_or_null("Back Button")
 )
 
+
 func _ready():
 	# Validate containers; create minimal fallbacks if scene has different names
 	if medicine_inventory == null:

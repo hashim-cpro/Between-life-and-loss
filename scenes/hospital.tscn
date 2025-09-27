@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5yeadt4k611w"]
+[gd_scene load_steps=3 format=3 uid="uid://c5yeadt4k611w"]
 
 [ext_resource type="Script" uid="uid://ctryw57vilr3h" path="res://scripts/hospital.gd" id="1_la7h8"]
+[ext_resource type="Texture2D" uid="uid://bufc7njeavk4m" path="res://images/image copy.png" id="2_ysjay"]
 
 [node name="Hospital" type="Control"]
 layout_mode = 3
@@ -9,39 +10,56 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_la7h8")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -10
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -74.0
+offset_top = -207.0
+offset_right = 1282.0
+offset_bottom = 809.0
+texture = ExtResource("2_ysjay")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 441.0
+offset_top = 15.0
+offset_right = 680.0
+offset_bottom = 96.0
 
 [node name="MedicineInventory" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 88.0
+offset_top = 150.0
+offset_right = 272.0
+offset_bottom = 321.0
 
 [node name="Label" type="Label" parent="MedicineInventory"]
 layout_mode = 2
 
 [node name="PatientArea" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 0
+offset_left = 457.0
+offset_top = 169.0
+offset_right = 628.0
+offset_bottom = 355.0
 
 [node name="PatientTitle" type="Label" parent="PatientArea"]
 layout_mode = 2
 
 [node name="Back Button" type="Button" parent="."]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 483.0
+offset_top = 594.0
+offset_right = 703.0
+offset_bottom = 625.0
+text = "Go to Pharmacy"
 
 [node name="Stats" type="VBoxContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 0
+offset_left = 853.0
+offset_top = 174.0
+offset_right = 1118.0
+offset_bottom = 394.0
 
 [node name="Stats Title" type="Label" parent="Stats"]
 layout_mode = 2

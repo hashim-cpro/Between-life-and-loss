@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://q1c2ob8we15m"]
+[gd_scene load_steps=5 format=3 uid="uid://q1c2ob8we15m"]
 
 [ext_resource type="Script" uid="uid://c6xnstyniv5sx" path="res://scripts/pharmacy.gd" id="1_eick7"]
 [ext_resource type="Texture2D" uid="uid://dpe4a5idxl8m3" path="res://images/pot.png" id="2_pqhlw"]
+[ext_resource type="Texture2D" uid="uid://kh5l3tsj2d50" path="res://images/image.png" id="3_pqhlw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_25t4v"]
 radius = 154.081
@@ -11,12 +12,15 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_eick7")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = -19
 layout_mode = 0
-offset_left = 10.0
-offset_top = 21.0
-offset_right = 1162.0
-offset_bottom = 668.0
+offset_left = -98.0
+offset_top = -58.0
+offset_right = 1260.0
+offset_bottom = 745.0
+texture = ExtResource("3_pqhlw")
+expand_mode = 1
 
 [node name="Left Panel" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -88,7 +92,8 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="crafting pot" type="Area2D" parent="."]
-position = Vector2(34, -23)
+position = Vector2(236, 213)
+scale = Vector2(0.65, 0.65)
 
 [node name="Sprite2D" type="Sprite2D" parent="crafting pot"]
 position = Vector2(541, 454)
