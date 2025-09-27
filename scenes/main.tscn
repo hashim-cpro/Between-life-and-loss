@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgfpwynyi0pbb"]
+[gd_scene load_steps=3 format=3 uid="uid://cgfpwynyi0pbb"]
 
 [ext_resource type="Script" uid="uid://bjh8glxtgr2em" path="res://scripts/main.gd" id="1_o5qli"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o5qli"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -12,20 +14,30 @@ script = ExtResource("1_o5qli")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -284.0
+offset_top = -133.0
+offset_right = 1519.0
+offset_bottom = 842.0
+color = Color(0, 0, 0, 1)
 
 [node name="Panel" type="Panel" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 390.0
+offset_top = 288.0
+offset_right = 1327.0
+offset_bottom = 622.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_o5qli")
 
-[node name="Label" type="Label" parent="CanvasLayer/ColorRect/Panel"]
+[node name="Main text" type="Label" parent="CanvasLayer/ColorRect/Panel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 404.0
+offset_top = 141.0
+offset_right = 444.0
+offset_bottom = 164.0
 
-[node name="Button" type="Button" parent="CanvasLayer/ColorRect/Panel/Label"]
+[node name="Controls Guide" type="Label" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 661.0
+offset_top = 697.0
+offset_right = 1017.0
+offset_bottom = 751.0
