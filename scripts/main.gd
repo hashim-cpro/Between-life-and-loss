@@ -2,12 +2,18 @@ extends Control
 
 # Text to display goes here:
 @export var narrative_slides : Array[String] = [
-	"You are the only medic of a remote island...",
-	"Some white men wearing red suits enter your island.",
-	"They take some people. Now some of your loved ones are gone in the ocean in a big boat.",
-	"Days later, they return some younger boys, but they die in a week.",
-	"Next thing you know: everyone is getting sick. A VIRUS!!!",
-	"You must save them with what you have. Press continue to begin.",
+	"You are the only medic… on a distant, forgotten island.",
+	"One day, strangers arrive — pale men in red coats.",
+	"They take your people… your family… across the sea.",
+
+	"A few days later, they return some boys… but within a week, they are dead.",
+	"Soon after, a deadly virus started to spread across the island.",
+	"The shadow of death looms over your island.",
+
+	"Now, hope rests on you… and the little you have.",
+	"Can you save them?",
+	
+	"Press Continue to begin."
 ]
 
 var current_slide_index = 0
